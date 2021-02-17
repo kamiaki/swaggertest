@@ -1,2 +1,4 @@
 server:
     port: 8877
+#swagger开关
+switch_swagger: true

@@ -1,5 +1,6 @@
 package com.aki.swaggertest;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -15,10 +16,16 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * 在与spring boot集成时，放在与Application.java同级的目录下。
  * 通过@Configuration注解，让Spring来加载该类配置。
  * 再通过@EnableSwagger2注解来启用Swagger2。
+ *
+ * 导入postman 方法
+ * 1.访问http://localhost:8080/swagger-ui.html 文档的首页，复制下面这个地址 http://localhost:8877/v2/api-docs
+ * 2.打开postman-->import-->import Form Link
  */
 @Configuration
 @EnableSwagger2
 public class Swagger2 {
+    @Value("${switch_swagger}")
+    private boolean switch_swagger;
 
     /**
      * 创建API应用
@@ -35,7 +42,8 @@ public class Swagger2 {
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.aki"))
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                .enable(switch_swagger);
     }
 
     /**
