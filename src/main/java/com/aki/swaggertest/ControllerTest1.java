@@ -38,9 +38,9 @@ public class ControllerTest1 {
      *         defaultValue：参数的默认值
      */
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "mobile", value = "手机号", required = true,  dataType = "String"),
-            @ApiImplicitParam(name = "password", value = "密码", required = true,   dataType = "String"),
-            @ApiImplicitParam(name = "age", value = "年龄", required = true,  dataType = "String")
+            @ApiImplicitParam(name = "mobile", value = "手机号", required = true,  dataType = "string"),
+            @ApiImplicitParam(name = "password", value = "密码", required = true,   dataType = "string"),
+            @ApiImplicitParam(name = "age", value = "年龄", required = true,  dataType = "string")
     })
     /**
      * @ApiResponses：方法返回对象的说明
@@ -64,7 +64,7 @@ public class ControllerTest1 {
     /**
      * 单个参数
      */
-    @ApiImplicitParam(name = "depId", value = "部门id", required = true, paramType = "query")
+//    @ApiImplicitParam(name = "depId", value = "部门id", required = true, paramType = "query")
     public returnObj queryTest2(@RequestBody queryObj queryObj, String depId) {
         System.out.println(depId);
         System.out.println(queryObj);
