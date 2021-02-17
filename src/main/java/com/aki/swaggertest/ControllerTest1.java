@@ -42,6 +42,7 @@ public class ControllerTest1 {
             @ApiImplicitParam(name = "password", value = "密码", required = true,   dataType = "string"),
             @ApiImplicitParam(name = "age", value = "年龄", required = true,  dataType = "string")
     })
+    @ApiImplicitParam(name = "map", value = "{name: '行命', age: '岁数'}", required = true, paramType = "body")
     /**
      * @ApiResponses：方法返回对象的说明
      *     @ApiResponse：每个参数的说明
@@ -50,8 +51,8 @@ public class ControllerTest1 {
      *         response：抛出异常的类
      */
     @ApiResponses({
-            @ApiResponse(code = 400, message = "请求参数没填好"),
-            @ApiResponse(code = 404, message = "请求路径找不到")
+            @ApiResponse(code = 200, message = "{name: '行命', age: '岁数'}"),
+            @ApiResponse(code = 201, message = "{name: '222', age: '333'}"),
     })
     public returnObj queryTest(@RequestBody Map map) {
         System.out.println(map.toString());
