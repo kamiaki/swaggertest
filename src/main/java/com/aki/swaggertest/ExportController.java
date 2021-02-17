@@ -30,6 +30,7 @@ public class ExportController {
 		return "success";
 	}
 
+	// 用这个
 	@RequestMapping("/markdownToFile")
 	public String exportMarkdownToFile() throws MalformedURLException{
 		SwaggerUtils.generateMarkdownDocsToFile();
