@@ -8,6 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
+//@ApiImplicitParams({@ApiImplicitParam(name = "params", required = true, dataType = "Map", paramType = "body",
+//        value = "说明:" +
+//                "示例:")})
+//@ApiResponses({@ApiResponse(code = 200,
+//        message = "说明:" +
+//                "示例:")})
+
 @Slf4j
 @RestController
 @RequestMapping(value = "test")
