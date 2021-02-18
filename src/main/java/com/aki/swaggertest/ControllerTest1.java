@@ -42,6 +42,26 @@ public class ControllerTest1 {
             @ApiImplicitParam(name = "password", value = "密码", required = true,   dataType = "string"),
             @ApiImplicitParam(name = "age", value = "年龄", required = true,  dataType = "string")
     })
+    /**
+     * 属性名称	数据类型	默认值	说明
+     * name	String	“”	参数名称(实体类字段名称)
+     * value	String	“”	参数简要说明
+     * defaultValue	String	“”	描述参数的默认值
+     * allowableValues	String	“”	限制此参数接收的值，可使用的值或值得范围
+     * required	boolean	false	指定是否为必填参数,false:非必传参数; true:必传参数
+     * access	String	“”	参数过滤，参考: io.swagger.core.filter.SwaggerSpecFilte
+     * allowMultiple	boolean	false	指定参数是否可以通过多次出现来接收多个值
+     * dataType	String	“”	参数的数据类型，可以使类名或原始数据类型
+     * dataTypeClass	Class<?>	Void.class	参数的类，如果提供则覆盖 dataType
+     * paramType	String	“”	参数的参数类型，有效值为 path, query, body, header, form
+     * example	String	“”	非请求体(body)参数的单个请求示例
+     * examples	Example	@Example(value = @ExampleProperty(mediaType = “”, value = “”))	参数示例，仅适用于 BodyParameters(请求体类型的)
+     * type	String	“”	添加覆盖检测到的类型的功能
+     * format	String	“”	添加提供自定义格式的功能
+     * allowEmptyValue	boolean	false	添加将 format 设置为空的功能
+     * readOnly	boolean	false	添加被指定为只读的能力
+     * collectionFormat	String	“”	添加使用 array 类型 collectionFormat 的功能
+     */
     @ApiImplicitParam(name = "map", value = "{name: '行命', age: '岁数'}", required = true, paramType = "body")
     /**
      * @ApiResponses：方法返回对象的说明
